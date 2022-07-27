@@ -201,15 +201,25 @@ section {
     }
     .g-clef {
       width: 40%;
+      text-align: center;
       height: auto;
+    }
+    .g-clef-left,
+    .g-clef-right {
+      width: 100%;
+      z-index: 3;
+    }
+    .g-clef-right-bg {
+      transition: all 0.4s ease-in-out;
+      position: absolute;
+      z-index: 2;
     }
   }
   .right-header {
+    padding-right: 12rem;
     display: flex;
     align-items: center;
-    padding-right: 12rem;
     text-align: justify;
-    left: -50px;
     .empty {
       clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
       shape-outside: polygon(0% 0%, 100% 0%, 0% 100%);
@@ -232,22 +242,25 @@ section {
 }
 
 .lines {
-  position: absolute;
-  transform: translateY(3rem);
+  display: flex;
+  flex-direction: column;
+  gap: 6.5rem;
   svg {
     height: 5.4rem;
     width: 100%;
     stroke-width: 0.8rem;
   }
+  img {
+    height: 0.5rem;
+  }
 }
 .lines-left {
+  position: absolute;
   left: 20%;
-  svg {
-    stroke: var(--color-grey-4);
-  }
 }
 
 .lines-right {
+  position: absolute;
   left: 40%;
   svg {
     line {
@@ -313,7 +326,7 @@ section {
       position: absolute;
       left: -27px;
       top: -5px;
-      // background-color: var(--color-secondary);
+      background-color: var(--color-secondary);
       width: 50px;
       height: 50px;
       border-radius: 50%;
@@ -519,7 +532,7 @@ section {
 }
 
 .btn-container {
-  display: flex;
+  display: inline-block;
 }
 
 .main-btn {
