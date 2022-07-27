@@ -38,28 +38,21 @@ function PageTransitions() {
     element.classList.toggle('light-mode');
 
     const toggleButton = document.querySelector('.theme-icon');
+    const gClef = document.querySelector('.g-clef-bg');
 
     if (toggleButton.classList.contains('fa-moon')) {
       toggleButton.className = toggleButton.className.replace(
         'fa-moon',
         'fa-sun'
       );
+      console.log(gClef);
+      gClef.src = 'img/g-clef-right-dark.svg';
     } else {
       toggleButton.className = toggleButton.className.replace(
         'fa-sun',
         'fa-moon'
       );
-    }
-
-    const leftClef = document.querySelector('.g-clef-left');
-    const rightClef = document.querySelector('.g-clef-right');
-
-    if (leftClef.src.includes('raster')) {
-      leftClef.src = leftClef.src.replace('-raster', '');
-      rightClef.src = rightClef.src.replace('clef', 'clef-raster');
-    } else {
-      rightClef.src = rightClef.src.replace('-raster', '');
-      leftClef.src = leftClef.src.replace('clef', 'clef-raster');
+      gClef.src = 'img/g-clef-right-yellow.svg';
     }
   });
 }
