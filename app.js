@@ -45,7 +45,6 @@ function PageTransitions() {
         'fa-moon',
         'fa-sun'
       );
-      console.log(gClef);
       gClef.src = 'img/g-clef-right-dark.svg';
     } else {
       toggleButton.className = toggleButton.className.replace(
